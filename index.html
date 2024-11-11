@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Learning</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Cryptography Web</h1>
+    </header>
+    <div class="container">
+        <div class="grid" id="classicGrid">
+            <!-- Cards will be inserted here by JavaScript -->
+        </div>
+        <div class="grid" id="modernGrid">
+            <!-- Cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const first = {
+            'RSA': {url: 'html/rsa.html', icon: 'fas fa-key', description:"RSA is a public-key cryptosystem."},
+            'AES': {url: 'html/aes.html', icon: 'fas fa-key', description:"AES is a symmetric encryption algorithm."},
+            'DES': {url: 'html/des.html', icon: 'fas fa-key', description:"DES is a symmetric-key algorithm."},
+            'DSA': {url: 'html/dsa.html', icon: 'fas fa-key', description:"DSA is a digital signature algorithm."},
+            'EIGamal': {url: 'html/EIgamal.html', icon: 'fas fa-key', description:"ElGamal is an asymmetric key encryption algorithm."},
+        };
+
+        const second = {
+            'Caesar Cipher': {url: 'html/caesar.html', icon: 'fas fa-key', description:"Caesar Cipher is a substitution cipher."},
+            'Playfair Cipher': {url: 'html/playfair.html', icon: 'fas fa-key', description:"Playfair Cipher is a digraph substitution cipher."},
+            'Permutation Cipher': {url: 'html/permutation.html', icon: 'fas fa-key', description:"Permutation Cipher is a transposition cipher."},
+            'Substitution Cipher': {url: 'html/substitution.html', icon: 'fas fa-key', description:"Substitution Cipher replaces each letter with another."},
+            'Vigenère Cipher': {url: 'html/vigenere.html', icon: 'fas fa-key', description:"Vigenère Cipher is a method of encrypting alphabetic text."},
+        };
+        const modernGrid = document.getElementById('modernGrid');
+
+        for (const [name, {url, icon, description}] of Object.entries(first)) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const iconElement = document.createElement('i');
+            iconElement.className = icon;
+
+            const title = document.createElement('h3');
+            title.textContent = name;
+
+            const desc = document.createElement('p');
+            desc.textContent = description;
+
+            card.appendChild(iconElement);
+            card.appendChild(title);
+            card.appendChild(desc);
+
+            card.onclick = () => {
+                window.location.href = url;
+            };
+            modernGrid.appendChild(card);
+        }
+
+        const classicGrid = document.getElementById('classicGrid');
+
+        for (const [name, {url, icon, description}] of Object.entries(second)) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            const iconElement = document.createElement('i');
+            iconElement.className = icon;
+            const title = document.createElement('h3');
+            title.textContent = name;
+            const desc = document.createElement('p');
+            desc.textContent = description;
+            card.appendChild(iconElement);
+            card.appendChild(title);
+            card.appendChild(desc);
+            
+            card.onclick = () => {
+                window.location.href = url;
+            };
+            classicGrid.appendChild(card);
+        }
+    </script>
+    <footer class="footer">
+        <p>© <span id="year"></span> Bùi Lê Quang Hải. Khoa học máy tính K63 UTC</p>
+        <script>
+          document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>

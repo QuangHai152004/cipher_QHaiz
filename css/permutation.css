@@ -1,0 +1,155 @@
+:root {
+    --primary-blue: #8195ee;
+    --accent-blue: #2196F3;
+    --hover-blue: #23578b;
+    --accent-green: #41ca45;
+    --accent-yellow: #e2cd12;
+    --accent-black: #000000;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: #ffffff;
+}
+
+.container {
+    background-color: var(--primary-blue);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: var(--accent-yellow);
+}
+
+.tab {
+    padding: 12px 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background-color: var(--accent-blue);
+    color: white;
+    border-radius: 15px;
+}
+
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+label {
+    font-weight: 500;
+    color: #000000;
+}
+
+.matrix-container {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.matrix-title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #000000;
+    font-weight: 500;
+}
+
+.matrix-grid {
+    display: grid;
+    gap: 8px;
+    margin: 0 auto;
+}
+
+.matrix-cell {
+    background: var(--primary-blue);
+    border: 1px solid var(--accent-black);
+    padding: 12px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent-black);
+    border-radius: 4px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--hover-blue);
+}
+
+.footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: var(--accent-green);
+    color: black;
+    border-radius: 0 0 12px 12px;
+    margin-top: 20px;
+}
